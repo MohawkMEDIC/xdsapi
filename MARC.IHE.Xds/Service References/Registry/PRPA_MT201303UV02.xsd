@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:hl7-org:v3" xmlns:ex="urn:hl7-org/v3-example" elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="../coreschemas/infrastructureRoot.xsd" />
+  <xs:include schemaLocation="COCT_MT150007UV.xsd" />
+  <xs:include schemaLocation="COCT_MT820000UV.xsd" />
+  <xs:include schemaLocation="COCT_MT150002UV01.xsd" />
+  <xs:include schemaLocation="COCT_MT030007UV.xsd" />
+  <xs:include schemaLocation="COCT_MT030207UV.xsd" />
+  <xs:include schemaLocation="COCT_MT710007UV.xsd" />
+  <xs:include schemaLocation="COCT_MT960000UV05.xsd" />
+  <xs:include schemaLocation="COCT_MT670000UV04.xsd" />
+  <xs:include schemaLocation="COCT_MT150003UV03.xsd" />
+  <xs:include schemaLocation="COCT_MT510000UV06.xsd" />
+  <xs:annotation>
+    <xs:documentation>Generated using schema builder version 3.1.6. Stylesheets:
+
+StaticMifToXsd.xsl version 2.0</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="PRPA_MT201303UV02.AdministrativeObservation">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code" type="CD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="effectiveTime" type="SXCM_TS" />
+      <xs:element minOccurs="1" maxOccurs="1" name="value" type="ANY" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassObservation" use="required" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.BirthPlace">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="addr" type="AD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="birthplace" nillable="true" type="COCT_MT710007UV.Place" />
+      <xs:element minOccurs="0" maxOccurs="1" name="subjectOf" nillable="true" type="PRPA_MT201303UV02.Subject2" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="BIRTHPL" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.CareGiver">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addr" type="AD" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="1" maxOccurs="1" name="careGiverPerson" nillable="true" type="COCT_MT030207UV.Person" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="CAREGIVER" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Citizen">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="1" maxOccurs="1" name="politicalNation" type="PRPA_MT201303UV02.Nation" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="CIT" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.ContactParty">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addr" type="AD" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:choice>
+        <xs:element minOccurs="1" maxOccurs="1" name="contactPerson" nillable="true" type="COCT_MT030207UV.Person" />
+        <xs:element minOccurs="1" maxOccurs="1" name="contactOrganization" nillable="true" type="COCT_MT150007UV.Organization" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="RoleClassContact" use="required" />
+    <xs:attribute name="negationInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.CoveredParty">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="sequenceNumber" type="INT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="time" type="IVL_TS" />
+      <xs:element minOccurs="1" maxOccurs="1" name="coverageRecord" nillable="true" type="COCT_MT510000UV06.CoverageRecord" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="COV" name="typeCode" type="ParticipationType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Employee">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addr" type="AD" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="jobTitleName" type="SC" />
+      <xs:element minOccurs="0" maxOccurs="1" name="jobClassCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="occupationCode" type="CE" />
+      <xs:element minOccurs="1" maxOccurs="1" name="employerOrganization" nillable="true" type="COCT_MT150007UV.Organization" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="RoleClassEmployee" use="required" />
+    <xs:attribute name="negationInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Group">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="name" type="EN" />
+      <xs:element minOccurs="0" maxOccurs="1" name="desc" type="ED" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="existenceTime" type="IVL_TS" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="addr" type="AD" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="EntityClassOrganization" use="required" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Guardian">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addr" type="AD" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="certificateText" type="ED" />
+      <xs:choice>
+        <xs:element minOccurs="1" maxOccurs="1" name="guardianPerson" nillable="true" type="COCT_MT030207UV.Person" />
+        <xs:element minOccurs="1" maxOccurs="1" name="guardianOrganization" nillable="true" type="COCT_MT150007UV.Organization" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="GUARD" name="classCode" type="RoleClass" use="optional" />
+    <xs:attribute name="negationInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.LanguageCommunication">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="languageCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="modeCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="proficiencyLevelCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="preferenceInd" type="BL" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Member">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="1" maxOccurs="1" name="group" nillable="true" type="PRPA_MT201303UV02.Group" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="MBR" name="classCode" type="RoleClass" use="required" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Nation">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code" type="CD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="ON" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="NAT" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.NonPersonLivingSubject">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="name" type="EN" />
+      <xs:element minOccurs="0" maxOccurs="1" name="desc" type="ED" />
+      <xs:element minOccurs="0" maxOccurs="1" name="existenceTime" type="IVL_TS" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="riskCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="handlingCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="administrativeGenderCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="birthTime" type="TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="deceasedInd" type="BL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="deceasedTime" type="TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="multipleBirthInd" type="BL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="multipleBirthOrderNumber" type="INT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="organDonorInd" type="BL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="strainText" type="ED" />
+      <xs:element minOccurs="0" maxOccurs="1" name="genderStatusCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asPatientOfOtherProvider" nillable="true" type="PRPA_MT201303UV02.PatientOfOtherProvider" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asMember" nillable="true" type="PRPA_MT201303UV02.Member" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asOtherIDs" nillable="true" type="PRPA_MT201303UV02.OtherIDs" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contactParty" nillable="true" type="PRPA_MT201303UV02.ContactParty" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="guardian" nillable="true" type="PRPA_MT201303UV02.Guardian" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="personalRelationship" nillable="true" type="PRPA_MT201303UV02.PersonalRelationship" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="careGiver" nillable="true" type="PRPA_MT201303UV02.CareGiver" />
+      <xs:element minOccurs="0" maxOccurs="1" name="birthPlace" nillable="true" type="PRPA_MT201303UV02.BirthPlace" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="guarantorRole" nillable="true" type="COCT_MT670000UV04.GuarantorRole" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="EntityClassNonPersonLivingSubject" use="required" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.OtherIDs">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="1" maxOccurs="1" name="scopingOrganization" nillable="true" type="COCT_MT150002UV01.Organization" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="RoleClassRoot" use="required" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Patient">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addr" type="AD" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="1" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="confidentialityCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="veryImportantPersonCode" type="CE" />
+      <xs:choice>
+        <xs:element minOccurs="1" maxOccurs="1" name="patientPerson" nillable="true" type="PRPA_MT201303UV02.Person" />
+        <xs:element minOccurs="1" maxOccurs="1" name="patientNonPersonLivingSubject" nillable="true" type="PRPA_MT201303UV02.NonPersonLivingSubject" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="providerOrganization" nillable="true" type="COCT_MT150003UV03.Organization" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="subjectOf" nillable="true" type="PRPA_MT201303UV02.Subject4" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="coveredPartyOf" nillable="true" type="PRPA_MT201303UV02.CoveredParty" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PAT" name="classCode" type="RoleClass" use="required" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.PatientOfOtherProvider">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="subjectOf" type="PRPA_MT201303UV02.Subject3" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PAT" name="classCode" type="RoleClass" use="required" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Person">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="name" type="PN" />
+      <xs:element minOccurs="0" maxOccurs="1" name="desc" type="ED" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="administrativeGenderCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="birthTime" type="TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="deceasedInd" type="BL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="deceasedTime" type="TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="multipleBirthInd" type="BL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="multipleBirthOrderNumber" type="INT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="organDonorInd" type="BL" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addr" type="AD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="maritalStatusCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="educationLevelCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="disabilityCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="livingArrangementCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="religiousAffiliationCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="raceCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ethnicGroupCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asPatientOfOtherProvider" nillable="true" type="PRPA_MT201303UV02.PatientOfOtherProvider" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asEmployee" nillable="true" type="PRPA_MT201303UV02.Employee" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asCitizen" nillable="true" type="PRPA_MT201303UV02.Citizen" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asStudent" nillable="true" type="PRPA_MT201303UV02.Student" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asMember" nillable="true" type="PRPA_MT201303UV02.Member" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="asOtherIDs" nillable="true" type="PRPA_MT201303UV02.OtherIDs" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contactParty" nillable="true" type="PRPA_MT201303UV02.ContactParty" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="guardian" nillable="true" type="PRPA_MT201303UV02.Guardian" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="personalRelationship" nillable="true" type="PRPA_MT201303UV02.PersonalRelationship" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="careGiver" nillable="true" type="PRPA_MT201303UV02.CareGiver" />
+      <xs:element minOccurs="0" maxOccurs="1" name="birthPlace" nillable="true" type="PRPA_MT201303UV02.BirthPlace" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="guarantorRole" nillable="true" type="COCT_MT670000UV04.GuarantorRole" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="languageCommunication" nillable="true" type="PRPA_MT201303UV02.LanguageCommunication" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PSN" name="classCode" type="EntityClass" use="optional" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.PersonalRelationship">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addr" type="AD" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:choice>
+        <xs:element minOccurs="1" maxOccurs="1" name="relationshipHolder1" nillable="true" type="COCT_MT030007UV.Person" />
+        <xs:element minOccurs="1" maxOccurs="1" name="relationshipHolder2" nillable="true" type="COCT_MT030007UV.NonPersonLivingSubject" />
+      </xs:choice>
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PRS" name="classCode" type="RoleClass" use="optional" />
+    <xs:attribute name="negationInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Student">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addr" type="AD" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="telecom" type="TEL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="schoolOrganization" nillable="true" type="COCT_MT150007UV.Organization" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="STD" name="classCode" type="RoleClass" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Subject2">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="position" nillable="true" type="COCT_MT960000UV05.Position" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ParticipationTargetSubject" use="required" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Subject3">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="careProvision" type="COCT_MT820000UV.CareProvision" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ParticipationTargetSubject" use="required" />
+  </xs:complexType>
+  <xs:complexType name="PRPA_MT201303UV02.Subject4">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="administrativeObservation" nillable="true" type="PRPA_MT201303UV02.AdministrativeObservation" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute default="SBJ" name="typeCode" type="ParticipationTargetSubject" use="optional" />
+  </xs:complexType>
+</xs:schema>

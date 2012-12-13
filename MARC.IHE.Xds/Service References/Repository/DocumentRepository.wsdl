@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="DocumentRepository" targetNamespace="urn:ihe:iti:xds-b:2007" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <documentation>IHE XDS.b Document Repository</documentation>
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="urn:ihe:iti:xds-b:2007">
+      <xsd:include schemaLocation="../schema/IHE/XDS.b_DocumentRepository.xsd" />
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0">
+      <xsd:include schemaLocation="../schema/ebRS/rs.xsd" />
+    </xsd:schema>
+    <xsd:schema xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0">
+      <xsd:include schemaLocation="../schema/ebRS/lcm.xsd" />
+    </xsd:schema>
+    <xsd:schema xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+      <xsd:include schemaLocation="../schema/ebRS/rim.xsd" />
+    </xsd:schema>
+  </types>
+  <message name="RetrieveDocumentSet_Message">
+    <documentation>Retrieve Document Set</documentation>
+    <part name="body" element="ihe:RetrieveDocumentSetRequest" />
+  </message>
+  <message name="RetrieveDocumentSetResponse_Message">
+    <documentation>Retrieve Document Set Response</documentation>
+    <part name="body" element="ihe:RetrieveDocumentSetResponse" />
+  </message>
+  <message name="ProvideAndRegisterDocumentSet-b_Message">
+    <documentation>Provide and Register Document Set</documentation>
+    <part name="body" element="ihe:ProvideAndRegisterDocumentSetRequest" />
+  </message>
+  <message name="ProvideAndRegisterDocumentSet-bResponse_Message">
+    <documentation>Provide And Register Document Set Response</documentation>
+    <part name="body" element="rs:RegistryResponse" />
+  </message>
+  <portType name="DocumentRepository_PortType">
+    <operation name="DocumentRepository_RetrieveDocumentSet">
+      <input wsaw:Action="urn:ihe:iti:2007:RetrieveDocumentSet" message="ihe:RetrieveDocumentSet_Message" />
+      <output wsaw:Action="urn:ihe:iti:2007:RetrieveDocumentSetResponse" message="ihe:RetrieveDocumentSetResponse_Message" />
+    </operation>
+    <operation name="DocumentRepository_ProvideAndRegisterDocumentSet-b">
+      <input wsaw:Action="urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b" message="ihe:ProvideAndRegisterDocumentSet-b_Message" />
+      <output wsaw:Action="urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bResponse" message="ihe:ProvideAndRegisterDocumentSet-bResponse_Message" />
+    </operation>
+  </portType>
+  <binding name="DocumentRepository_Binding" type="ihe:DocumentRepository_PortType">
+    <wsaw:UsingAddressing required="true" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="DocumentRepository_ProvideAndRegisterDocumentSet-b">
+      <soap12:operation soapAction="urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DocumentRepository_RetrieveDocumentSet">
+      <soap12:operation soapAction="urn:ihe:iti:2007:RetrieveDocumentSet" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DocumentRepository_Service">
+    <port name="DocumentRepository_Port_Soap12" binding="ihe:DocumentRepository_Binding">
+      <soap12:address location="http://xds.marc-hi.ca:1025/xdsservice/xdsrepository" />
+    </port>
+  </service>
+</definitions>

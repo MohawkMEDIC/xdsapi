@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:hl7-org:v3" xmlns:ex="urn:hl7-org/v3-example" elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="../coreschemas/infrastructureRoot.xsd" />
+  <xs:include schemaLocation="COCT_MT240003UV02.xsd" />
+  <xs:include schemaLocation="COCT_MT240000UV01.xsd" />
+  <xs:annotation>
+    <xs:documentation>Generated using schema builder version 3.1.6. Stylesheets:
+
+StaticMifToXsd.xsl version 2.0</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="COCT_MT600000UV06.Author">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="healthCareProvider" nillable="true" type="COCT_MT600000UV06.HealthCareProvider" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="AUT" name="typeCode" type="ParticipationType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.Destination">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="serviceDeliveryLocation" nillable="true" type="COCT_MT240003UV02.ServiceDeliveryLocation" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="DST" name="typeCode" type="ParticipationType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.Diagnosis">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code" type="CD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="ST" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="1" maxOccurs="1" name="value" type="CD" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassObservation" use="required" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.HealthCareProvider">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="healthCareProviderPerson" nillable="true" type="COCT_MT600000UV06.ProviderPerson" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PROV" name="classCode" type="RoleClass" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.InFulfillmentOf">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="prescriptionOrder" type="COCT_MT600000UV06.PrescriptionOrder" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ActRelationshipFulfills" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.Location">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="serviceDeliveryLocation" type="COCT_MT240000UV01.ServiceDeliveryLocation" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ParticipationTargetLocation" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.ManufacturedProduct">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="manufacturedVisionProduct" nillable="true" type="COCT_MT600000UV06.VisionProduct" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productOf" nillable="true" type="COCT_MT600000UV06.Product2" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="RoleClassManufacturedProduct" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.Origin">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="serviceDeliveryLocation" nillable="true" type="COCT_MT240003UV02.ServiceDeliveryLocation" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="ORG" name="typeCode" type="ParticipationType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.Performer">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="healthCareProvider" nillable="true" type="COCT_MT600000UV06.HealthCareProvider" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ParticipationPhysicalPerformer" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.PertinentInformation">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="sequenceNumber" type="INT" />
+      <xs:element minOccurs="1" maxOccurs="1" name="diagnosis" nillable="true" type="COCT_MT600000UV06.Diagnosis" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ActRelationshipPertains" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.PertinentInformation1">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="visionPrescriptionObservationEvent" nillable="true" type="COCT_MT600000UV06.VisionPrescriptionObservationEvent" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ActRelationshipPertains" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.PertinentInformation2">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="prescriptionIntent" nillable="true" type="COCT_MT600000UV06.PrescriptionIntent" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ActRelationshipPertains" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.PrescriptionIntent">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="inFulfillmentOf" type="COCT_MT600000UV06.InFulfillmentOf" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="SBADM" name="classCode" type="ActClass" use="required" />
+    <xs:attribute name="moodCode" type="ActMoodIntent" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.PrescriptionOrder">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="author" nillable="true" type="COCT_MT600000UV06.Author" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="SBADM" name="classCode" type="ActClass" use="required" />
+    <xs:attribute fixed="RQO" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.Product">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="manufacturedProduct" type="COCT_MT600000UV06.ManufacturedProduct" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PRD" name="typeCode" type="ParticipationType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.Product2">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="supplyObservationEvent" nillable="true" type="COCT_MT600000UV06.SupplyObservationEvent" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PRD" name="typeCode" type="ParticipationType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.ProviderPerson">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="PN" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PSN" name="classCode" type="EntityClass" use="required" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.SupplyEvent">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code" type="CD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="IVL_TS" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="priorityCode" type="CE" />
+      <xs:element minOccurs="1" maxOccurs="2" name="product" type="COCT_MT600000UV06.Product" />
+      <xs:element minOccurs="0" maxOccurs="1" name="performer" nillable="true" type="COCT_MT600000UV06.Performer" />
+      <xs:element minOccurs="0" maxOccurs="1" name="origin" nillable="true" type="COCT_MT600000UV06.Origin" />
+      <xs:element minOccurs="0" maxOccurs="1" name="destination" nillable="true" type="COCT_MT600000UV06.Destination" />
+      <xs:element minOccurs="1" maxOccurs="1" name="location" type="COCT_MT600000UV06.Location" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pertinentInformation1" nillable="true" type="COCT_MT600000UV06.PertinentInformation1" />
+      <xs:element minOccurs="1" maxOccurs="1" name="pertinentInformation2" nillable="true" type="COCT_MT600000UV06.PertinentInformation2" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pertinentInformation3" nillable="true" type="COCT_MT600000UV06.PertinentInformation" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassSupply" use="required" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.SupplyObservationEvent">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="targetSiteCode" type="CD" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassObservation" use="required" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.VisionPrescriptionObservationEvent">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code" type="CD" />
+      <xs:element minOccurs="1" maxOccurs="1" name="value" type="ANY" />
+      <xs:element minOccurs="1" maxOccurs="1" name="targetSiteCode" type="CD" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassObservation" use="required" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT600000UV06.VisionProduct">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="EN" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="EntityClassMaterial" use="required" />
+    <xs:attribute fixed="INSTANCE" name="determinerCode" type="EntityDeterminer" use="required" />
+  </xs:complexType>
+</xs:schema>

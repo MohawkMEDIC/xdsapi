@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:hl7-org:v3" xmlns:ex="urn:hl7-org/v3-example" elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="../coreschemas/infrastructureRoot.xsd" />
+  <xs:annotation>
+    <xs:documentation>Generated using schema builder version 3.1.6. Stylesheets:
+HMD was rendered into XML using software provided to HL7 by Beeler Consulting LLC.
+ HMD to MIF Transform: $Id: RoseTreeHmdToMIFStaticModel.xsl,v 1.15 2007/10/19 05:55:13 wbeeler Exp $
+  Base transform: $Id: ConvertBase.xsl,v 1.5 2007/10/19 05:55:13 wbeeler Exp $
+  Package Id Conversion: $Id: TransformPackageIds.xsl,v 1.6 2007/03/20 02:48:49 wbeeler Exp $
+  HTML To MIF markup: $Id: HtmlToMIFMarkup.xsl,v 1.4 2007/03/20 02:48:49 wbeeler Exp $
+ Flat to Serialization Transform: $Id: MIFStaticModelFlatToSerialization.xsl,v 1.5 2007/03/20 02:48:50 wbeeler Exp $
+ Fix Names Transform: $Id: FixMifNames.xsl,v 1.8 2007/03/20 02:48:49 wbeeler Exp $
+  Base transform: $Id: ConvertBase.xsl,v 1.5 2007/10/19 05:55:13 wbeeler Exp $
+  Package Id Conversion: $Id: TransformPackageIds.xsl,v 1.6 2007/03/20 02:48:49 wbeeler Exp $
+StaticMifToXsd.xsl version 2.0</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="MCAI_MT900001UV01.ActOrderRequired">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="effectiveTime" type="SXCM_TS" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="subject" nillable="true" type="MCAI_MT900001UV01.Subject" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassRoot" use="required" />
+    <xs:attribute fixed="RQO" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="MCAI_MT900001UV01.DetectedIssueEvent">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="1" maxOccurs="1" name="code" type="CD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="ED" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="ANY" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mitigatedBy" nillable="true" type="MCAI_MT900001UV01.SourceOf" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="triggerFor" nillable="true" type="MCAI_MT900001UV01.Requires" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="ALRT" name="classCode" type="ActClass" use="required" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="MCAI_MT900001UV01.DetectedIssueManagement">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="ED" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassRoot" use="required" />
+    <xs:attribute name="moodCode" type="x_ActMoodDefEvn" use="required" />
+  </xs:complexType>
+  <xs:complexType name="MCAI_MT900001UV01.Requires">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="actOrderRequired" nillable="true" type="MCAI_MT900001UV01.ActOrderRequired" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="TRIG" name="typeCode" type="ActRelationshipType" use="required" />
+    <xs:attribute name="contextConductionInd" type="bl" use="optional" />
+    <xs:attribute name="negationInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="MCAI_MT900001UV01.Role">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CE" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="RoleClassRoot" use="required" />
+  </xs:complexType>
+  <xs:complexType name="MCAI_MT900001UV01.SourceOf">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="detectedIssueManagement" nillable="true" type="MCAI_MT900001UV01.DetectedIssueManagement" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ActRelationshipMitigates" use="required" />
+    <xs:attribute default="false" name="contextConductionInd" type="bl" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="MCAI_MT900001UV01.Subject">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="role" nillable="true" type="MCAI_MT900001UV01.Role" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ParticipationTargetSubject" use="required" />
+  </xs:complexType>
+</xs:schema>

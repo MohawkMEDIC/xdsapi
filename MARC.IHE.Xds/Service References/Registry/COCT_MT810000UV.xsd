@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:hl7-org:v3" xmlns:ex="urn:hl7-org/v3-example" elementFormDefault="qualified" targetNamespace="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="../coreschemas/infrastructureRoot.xsd" />
+  <xs:include schemaLocation="COCT_MT090002UV01.xsd" />
+  <xs:include schemaLocation="COCT_MT040008UV.xsd" />
+  <xs:annotation>
+    <xs:documentation>Generated using schema builder version 3.1.6. Stylesheets:
+
+StaticMifToXsd.xsl version 2.0</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="COCT_MT810000UV.InFulfillmentOf">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="verificationRequest" nillable="true" type="COCT_MT810000UV.VerificationRequest" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ActRelationshipFulfills" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT810000UV.InformationProvision">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="performer" nillable="true" type="COCT_MT810000UV.Performer" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="INFRM" name="classCode" type="ActClass" use="required" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT810000UV.Performer">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="responsible" nillable="true" type="COCT_MT040008UV.Responsible" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ParticipationPhysicalPerformer" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT810000UV.PrimaryPerformer">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="1" name="signatureCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="signatureText" type="ED" />
+      <xs:element minOccurs="1" maxOccurs="1" name="assignedEntity" nillable="true" type="COCT_MT090002UV01.AssignedEntity" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute fixed="PPRF" name="typeCode" type="ParticipationType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT810000UV.Support">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="1" name="informationProvision" nillable="true" type="COCT_MT810000UV.InformationProvision" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="typeCode" type="ActRelationshipHasSupport" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT810000UV.Verification">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="id" type="II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="code" type="CD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="statusCode" type="CS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="effectiveTime" type="TS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="reasonCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="1" name="value" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="methodCode" type="CE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="primaryPerformer" nillable="true" type="COCT_MT810000UV.PrimaryPerformer" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="inFulfillmentOf" nillable="true" type="COCT_MT810000UV.InFulfillmentOf" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="support" nillable="true" type="COCT_MT810000UV.Support" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassObservation" use="required" />
+    <xs:attribute fixed="EVN" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COCT_MT810000UV.VerificationRequest">
+    <xs:sequence>
+      <xs:group ref="InfrastructureRootElements" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="id" type="II" />
+    </xs:sequence>
+    <xs:attributeGroup ref="InfrastructureRootAttributes" />
+    <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />
+    <xs:attribute name="classCode" type="ActClassObservation" use="required" />
+    <xs:attribute fixed="RQO" name="moodCode" type="ActMood" use="required" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d954713e-7dc5-41b5-951d-f4d18a696b52" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="file://C:/Users/fyfej/SkyDrive/Documents/COMP10075/Week 7 (IHE XDS)/wsdls/wsdl/XDS.b_DocumentRepository.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="XDS.xsd" MetadataType="Schema" ID="c1ef3f76-24cf-4a41-a9b6-6cb7c591ce8b" SourceId="1" SourceUrl="file:///C:/Users/fyfej/SkyDrive/Documents/COMP10075/Week 7 (IHE XDS)/wsdls/schema/IHE/XDS.b_DocumentRepository.xsd" />
+    <MetadataFile FileName="xml.xsd" MetadataType="Schema" ID="38ed3937-b1a3-41b3-9daa-cd81027917dc" SourceId="1" SourceUrl="http://www.w3.org/2001/xml.xsd" />
+    <MetadataFile FileName="lcm.xsd" MetadataType="Schema" ID="aa591480-ab0d-4fc5-bfe8-b6a3c34f8688" SourceId="1" SourceUrl="file:///C:/Users/fyfej/SkyDrive/Documents/COMP10075/Week 7 (IHE XDS)/wsdls/schema/ebRS/lcm.xsd" />
+    <MetadataFile FileName="DocumentRepository.wsdl" MetadataType="Wsdl" ID="0def1e2d-9c7a-4cda-83f0-175af7956ec8" SourceId="1" SourceUrl="file:///C:/Users/fyfej/SkyDrive/Documents/COMP10075/Week 7 (IHE XDS)/wsdls/wsdl/XDS.b_DocumentRepository.wsdl" />
+    <MetadataFile FileName="rim.xsd" MetadataType="Schema" ID="8e30b276-9058-4d6c-bffb-c7c81a6a2e44" SourceId="1" SourceUrl="file:///C:/Users/fyfej/SkyDrive/Documents/COMP10075/Week 7 (IHE XDS)/wsdls/schema/ebRS/rim.xsd" />
+    <MetadataFile FileName="rs.xsd" MetadataType="Schema" ID="e426377a-0527-4fcd-9177-4bfd4810d221" SourceId="1" SourceUrl="file:///C:/Users/fyfej/SkyDrive/Documents/COMP10075/Week 7 (IHE XDS)/wsdls/schema/ebRS/rs.xsd" />
+    <MetadataFile FileName="query.xsd" MetadataType="Schema" ID="6340c09f-0791-4579-8b55-916887aa3b36" SourceId="1" SourceUrl="file:///C:/Users/fyfej/SkyDrive/Documents/COMP10075/Week 7 (IHE XDS)/wsdls/schema/ebRS/query.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
