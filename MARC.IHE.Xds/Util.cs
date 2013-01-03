@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MARC.IHE.Xds.Repository;
+using MARC.IHE.Xds.Registry;
 
 namespace MARC.IHE.Xds
 {
@@ -38,6 +39,7 @@ namespace MARC.IHE.Xds
             params IdentifiableType[] objects
         )
         {
+            
             SubmitObjectsRequest retVal = new SubmitObjectsRequest();
             retVal.RegistryObjectList = objects;
             return retVal;

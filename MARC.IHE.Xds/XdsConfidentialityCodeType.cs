@@ -33,15 +33,15 @@ namespace MARC.IHE.Xds
         /// <summary>
         /// Document is submitted
         /// </summary>
-        public static const XdsConfidentialityCodeType Normal = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.107", "Connect-a-thon confidentialityCodes");
+        public static readonly XdsConfidentialityCodeType Normal = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.107", "Connect-a-thon confidentialityCodes");
         /// <summary>
         /// Document has been approved for sharing
         /// </summary>
-        public static const XdsConfidentialityCodeType Restricted = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.109", "Connect-a-thon confidentialityCodes");
+        public static readonly XdsConfidentialityCodeType Restricted = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.109", "Connect-a-thon confidentialityCodes");
         /// <summary>
         /// Document entry that is deprecated
         /// </summary>
-        public static const XdsConfidentialityCodeType EmergencyOnly = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.110", "Connect-a-thon confidentialityCodes");
+        public static readonly XdsConfidentialityCodeType EmergencyOnly = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.110", "Connect-a-thon confidentialityCodes");
 
         private readonly String m_code;
         private readonly String m_scheme;
