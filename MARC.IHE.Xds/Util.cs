@@ -29,8 +29,33 @@ namespace MARC.IHE.Xds
     /// <summary>
     /// Utility class for generating XDS requests
     /// </summary>
-    public static class Util
+    public static class XdsUtil
     {
+
+        /// <summary>
+        /// Create an adhoc query request
+        /// </summary>
+        public static AdhocQueryRequest CreateAdhocQueryRequest(XdsGuidType queryId, params SlotType1[] parameters)
+        {
+            AdhocQueryRequest retVal = new AdhocQueryRequest();
+            // Set response option
+            retVal.ResponseOption = new ResponseOptionType()
+            {
+                returnComposedObjects = true,
+                returnType = ResponseOptionTypeReturnType.LeafClass
+            };
+
+            // Adhoc query
+            retVal.AdhocQuery = new AdhocQueryType()
+            {
+                id = queryId.ToString()
+            };
+
+            // Create the slots
+            retVal.AdhocQuery.Slot = parameters;
+
+            return retVal;
+        }
 
         /// <summary>
         /// Create Submit objects request

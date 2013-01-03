@@ -177,7 +177,7 @@ namespace MARC.IHE.Xds
         /// </summary>
         public override String ToString()
         {
-            return String.Format("urn:uuid:%s", this.m_queryGuid);
+            return String.Format("urn:uuid:{0}", this.m_queryGuid);
 
         }
 
