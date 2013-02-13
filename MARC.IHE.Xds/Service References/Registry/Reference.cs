@@ -357,6 +357,7 @@ namespace MARC.IHE.Xds.Registry {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Identifiable", IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ExtrinsicObject", IsNullable = false, Type = typeof(ExtrinsicObjectType))]
         public IdentifiableType[] RegistryObjectList {
             get {
                 return this.registryObjectListField;

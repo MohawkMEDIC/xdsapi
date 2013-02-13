@@ -32,6 +32,32 @@ namespace MARC.IHE.Xds
     public static class XdsUtil
     {
 
+
+        /// <summary>
+        /// Creates a retrieve document set request
+        /// </summary>
+        public static RetrieveDocumentSetRequestTypeDocumentRequest[] CreateRetrieveDocumentSetRequest(String repositoryId, String homeCommunityId, params String[] docIds)
+        {
+            if (docIds == null)
+                throw new ArgumentNullException("docIds");
+
+            var retVal = new RetrieveDocumentSetRequestTypeDocumentRequest[docIds.Length];
+
+            int i = 0;
+            foreach (var docid in docIds)
+            {
+                retVal[i++] = new RetrieveDocumentSetRequestTypeDocumentRequest()
+                {
+                    DocumentUniqueId = docid,
+                    HomeCommunityId = homeCommunityId,
+                    RepositoryUniqueId = repositoryId
+                };
+            }
+
+            return retVal;
+
+        }
+
         /// <summary>
         /// Create an adhoc query request
         /// </summary>
