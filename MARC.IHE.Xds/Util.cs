@@ -93,6 +93,7 @@ namespace MARC.IHE.Xds
             
             SubmitObjectsRequest retVal = new SubmitObjectsRequest();
             retVal.RegistryObjectList = objects;
+            
             return retVal;
         }
 
@@ -112,13 +113,21 @@ namespace MARC.IHE.Xds
         }
 
         /// <summary>
-        /// Create provide and register type
+        /// Create an extrinsic object
         /// </summary>
         public static ExtrinsicObjectType CreateExtrinsicObject(String mimeType, String name, XdsGuidType objectType, params SlotType1[] slots)
         {
+            return CreateExtrinsicObject(mimeType, name, objectType, slots, null, null);
+        }
+
+        /// <summary>
+        /// Create provide and register type
+        /// </summary>
+        public static ExtrinsicObjectType CreateExtrinsicObject(String mimeType, String name, XdsGuidType objectType, SlotType1[] slots, ClassificationType[] classifications, ExternalIdentifierType[] externalIds)
+        {
 
             ExtrinsicObjectType retVal = new ExtrinsicObjectType();
-            retVal.id = String.Format("urn:uuid:%s", Guid.NewGuid().ToString());
+            retVal.id = String.Format("urn:uuid:{0}", Guid.NewGuid().ToString());
             retVal.objectType = objectType.ToString();
             retVal.mimeType = mimeType;
             retVal.Name = new InternationalStringType()
@@ -133,9 +142,71 @@ namespace MARC.IHE.Xds
 
             // Slots
             retVal.Slot = slots;
+            retVal.Classification = classifications;
+            retVal.ExternalIdentifier = externalIds;
+
+            foreach(var itm in retVal.Classification)
+                itm.classifiedObject = retVal.id;
+
+            foreach(var itm in retVal.ExternalIdentifier)
+                itm.registryObject = retVal.id;
 
             return retVal;
 
+        }
+
+        /// <summary>
+        /// Classiication
+        /// </summary>
+        /// <param name="classificationScheme"></param>
+        /// <returns></returns>
+        public static ClassificationType CreateClassification(XdsGuidType classificationScheme, String nodeRepresentation, String name, params SlotType1[] slots)
+        {
+            ClassificationType retVal = new ClassificationType()
+            {
+                id = String.Format("urn:uuid:{0}", Guid.NewGuid().ToString()),
+                classificationScheme = classificationScheme.ToString(),
+                nodeRepresentation = nodeRepresentation
+            };
+
+            retVal.Name = new InternationalStringType()
+            {
+                LocalizedString = new LocalizedStringType[] {
+                    new LocalizedStringType() {
+                        value = name
+                    }
+                }
+            };
+            
+            // Slots
+            retVal.Slot = slots;
+
+            return retVal;
+        }
+
+
+        /// <summary>
+        /// Create an external identifier type
+        /// </summary>
+        public static ExternalIdentifierType CreateExternalIdentifier(XdsGuidType identifierType, String value, String name)
+        {
+            ExternalIdentifierType retVal = new ExternalIdentifierType()
+            {
+                id = String.Format("urn:uuid:{0}", Guid.NewGuid().ToString()),
+                identificationScheme = identifierType.ToString(),
+                value = value
+            };
+
+            retVal.Name = new InternationalStringType()
+            {
+                LocalizedString = new LocalizedStringType[] {
+                    new LocalizedStringType() {
+                        value = name
+                    }
+                }
+            };
+
+            return retVal;
         }
 
         /// <summary>
@@ -144,7 +215,7 @@ namespace MARC.IHE.Xds
         public static RegistryPackageType CreateRegistryPackage()
         {
             RegistryPackageType retVal = new RegistryPackageType();
-            retVal.id = String.Format("urn:uuid:%s", Guid.NewGuid().ToString());
+            retVal.id = String.Format("urn:uuid:{0}", Guid.NewGuid().ToString());
             return retVal;
         }
 
@@ -164,27 +235,28 @@ namespace MARC.IHE.Xds
         /// <summary>
         /// Create association
         /// </summary>
-        private static AssociationType1 CreateAssociation(RegistryObjectType source,
-            ExtrinsicObjectType target, String status)
+        public static AssociationType1 CreateAssociation(RegistryObjectType source,
+            ExtrinsicObjectType target, String status, String relation)
         {
             AssociationType1 retAssoc = new AssociationType1();
-            retAssoc.id = String.Format("urn:uuid:%s", Guid.NewGuid().ToString());
+            retAssoc.id = String.Format("urn:uuid:{0}", Guid.NewGuid().ToString());
             retAssoc.sourceObject = source.id;
             retAssoc.targetObject = target.id;
             retAssoc.Slot = new SlotType1[] {
                 CreateSlot("SubmissionSetStatus", status)
             };
+            retAssoc.associationType = relation;
             return retAssoc;
         }
 
         /// <summary>
         /// Create classification
         /// </summary>
-        private static ClassificationType CreateClassification(RegistryObjectType classifiedObject, XdsGuidType scheme, String nodeRepresentation, String name, params SlotType1[] slots)
+        public static ClassificationType CreateClassification(RegistryObjectType classifiedObject, XdsGuidType scheme, String nodeRepresentation, String name, params SlotType1[] slots)
         {
 
             ClassificationType retClass = new ClassificationType();
-            retClass.id = String.Format("urn:uuid:%s", Guid.NewGuid().ToString());
+            retClass.id = String.Format("urn:uuid:{0}", Guid.NewGuid().ToString());
             retClass.classificationScheme = scheme.ToString();
             retClass.classifiedObject = classifiedObject.id;
             retClass.nodeRepresentation = nodeRepresentation;
@@ -206,23 +278,24 @@ namespace MARC.IHE.Xds
         /// <summary>
         /// Create node classification
         /// </summary>
-        private static ClassificationType CreateNodeClassification(RegistryObjectType registryObject, XdsGuidType classificationNode)
+        public static ClassificationType CreateNodeClassification(RegistryObjectType registryObject, XdsGuidType classificationNode)
         {
             ClassificationType retClass = new ClassificationType();
-            retClass.id = String.Format("urn:uuid:%s", Guid.NewGuid());
+            retClass.id = String.Format("urn:uuid:{0}", Guid.NewGuid());
             retClass.classificationNode = classificationNode.ToString();
             retClass.classifiedObject = registryObject.id;
             return retClass;
         }
 
+        
         /// <summary>
         /// Create an external identifier
         /// </summary>
-        private static ExternalIdentifierType CreateExternalIdentifier(RegistryObjectType registryObject, XdsGuidType scheme, String value)
+        public static ExternalIdentifierType CreateExternalIdentifier(RegistryObjectType registryObject, XdsGuidType scheme, String value)
         {
 
             ExternalIdentifierType retId = new ExternalIdentifierType();
-            retId.id = String.Format("urn:uuid:%s", Guid.NewGuid().ToString());
+            retId.id = String.Format("urn:uuid:{0}", Guid.NewGuid().ToString());
 
             retId.registryObject= registryObject.id;
             retId.identificationScheme = scheme.ToString();

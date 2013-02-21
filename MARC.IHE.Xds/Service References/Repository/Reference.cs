@@ -1674,8 +1674,12 @@ namespace MARC.IHE.Xds.Repository {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Identifiable", IsNullable=false)]
-        public IdentifiableType[] RegistryObjectList {
+        [System.Xml.Serialization.XmlArrayItemAttribute("ExtrinsicObject", Type = typeof(ExtrinsicObjectType), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Association", Type = typeof(AssociationType1), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("RegistryPackage", Type = typeof(RegistryPackageType), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Classification", Type = typeof(ClassificationType), IsNullable = false)]
+        public IdentifiableType[] RegistryObjectList
+        {
             get {
                 return this.registryObjectListField;
             }
@@ -2211,8 +2215,12 @@ namespace MARC.IHE.Xds.Repository {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Identifiable", IsNullable=false)]
-        public IdentifiableType[] RegistryObjectList {
+        [System.Xml.Serialization.XmlArrayItemAttribute("ExtrinsicObject", Type = typeof(ExtrinsicObjectType), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Association", Type = typeof(AssociationType1), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Classification", Type = typeof(ClassificationType), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("RegistryPackage", Type = typeof(RegistryPackageType), IsNullable = false)]
+        public IdentifiableType[] RegistryObjectList
+        {
             get {
                 return this.registryObjectListField;
             }
