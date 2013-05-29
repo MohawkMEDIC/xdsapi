@@ -1143,7 +1143,7 @@ namespace MARC.IHE.Xds.Repository {
         
         private string subscriptionField;
         
-        /// <remarks/>
+        /// <remarks/>, IsNullable = true
         [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Identifiable", IsNullable=false)]
         public IdentifiableType[] RegistryObjectList {
