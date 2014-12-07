@@ -145,11 +145,13 @@ namespace MARC.IHE.Xds
             retVal.Classification = classifications;
             retVal.ExternalIdentifier = externalIds;
 
-            foreach(var itm in retVal.Classification)
-                itm.classifiedObject = retVal.id;
+            if(retVal.Classification != null)
+                foreach(var itm in retVal.Classification)
+                    itm.classifiedObject = retVal.id;
 
-            foreach(var itm in retVal.ExternalIdentifier)
-                itm.registryObject = retVal.id;
+            if(retVal.ExternalIdentifier != null)
+                foreach(var itm in retVal.ExternalIdentifier)
+                    itm.registryObject = retVal.id;
 
             return retVal;
 
