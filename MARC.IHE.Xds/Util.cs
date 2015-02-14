@@ -130,15 +130,16 @@ namespace MARC.IHE.Xds
             retVal.id = String.Format("urn:uuid:{0}", Guid.NewGuid().ToString());
             retVal.objectType = objectType.ToString();
             retVal.mimeType = mimeType;
-            retVal.Name = new InternationalStringType()
-            {
-                LocalizedString = new LocalizedStringType[]
+            if(name != null)
+                retVal.Name = new InternationalStringType()
                 {
-                    new LocalizedStringType() {
-                        value = name
+                    LocalizedString = new LocalizedStringType[]
+                    {
+                        new LocalizedStringType() {
+                            value = name
+                        }
                     }
-                }
-            };
+                };
 
             // Slots
             retVal.Slot = slots;
@@ -171,14 +172,15 @@ namespace MARC.IHE.Xds
                 nodeRepresentation = nodeRepresentation
             };
 
-            retVal.Name = new InternationalStringType()
-            {
-                LocalizedString = new LocalizedStringType[] {
-                    new LocalizedStringType() {
-                        value = name
+            if(name != null)
+                retVal.Name = new InternationalStringType()
+                {
+                    LocalizedString = new LocalizedStringType[] {
+                        new LocalizedStringType() {
+                            value = name
+                        }
                     }
-                }
-            };
+                };
             
             // Slots
             retVal.Slot = slots;
@@ -199,14 +201,15 @@ namespace MARC.IHE.Xds
                 value = value
             };
 
-            retVal.Name = new InternationalStringType()
-            {
-                LocalizedString = new LocalizedStringType[] {
-                    new LocalizedStringType() {
-                        value = name
+            if(name != null)
+                retVal.Name = new InternationalStringType()
+                {
+                    LocalizedString = new LocalizedStringType[] {
+                        new LocalizedStringType() {
+                            value = name
+                        }
                     }
-                }
-            };
+                };
 
             return retVal;
         }
@@ -264,14 +267,15 @@ namespace MARC.IHE.Xds
             retClass.nodeRepresentation = nodeRepresentation;
             retClass.Slot = slots;
 
-            retClass.Name = new InternationalStringType()
-            {
-                LocalizedString = new LocalizedStringType[] {
-                    new LocalizedStringType() {
-                        value = name
+            if(name != null)
+                retClass.Name = new InternationalStringType()
+                {
+                    LocalizedString = new LocalizedStringType[] {
+                        new LocalizedStringType() {
+                            value = name
+                        }
                     }
-                }
-            };
+                };
 
             return retClass;
         }
@@ -302,14 +306,15 @@ namespace MARC.IHE.Xds
             retId.registryObject= registryObject.id;
             retId.identificationScheme = scheme.ToString();
             retId.value = value;
-            retId.Name = new InternationalStringType()
-            {
-                LocalizedString = new LocalizedStringType[] {
-                    new LocalizedStringType() {
-                        value = scheme.Name
+            if(scheme.Name != null)
+                retId.Name = new InternationalStringType()
+                {
+                    LocalizedString = new LocalizedStringType[] {
+                        new LocalizedStringType() {
+                            value = scheme.Name
+                        }
                     }
-                }
-            };
+                };
 
             return retId;
         }
