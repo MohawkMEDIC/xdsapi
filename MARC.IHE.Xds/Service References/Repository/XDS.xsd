@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Sample license text.
+-->
+
 <xs:schema xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns="urn:ihe:iti:xds-b:2007" xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ihe:iti:xds-b:2007" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="../ebRS/rs.xsd" namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" />
   <xs:import schemaLocation="../ebRS/rim.xsd" namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" />

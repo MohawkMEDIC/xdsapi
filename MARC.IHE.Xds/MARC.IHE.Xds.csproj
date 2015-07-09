@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="MARC.IHE.Xds.licenseheader" />
     <None Include="Service References\Registry\DocumentRegistry.wsdl" />
     <None Include="Service References\Registry\lcm.xsd">
       <SubType>Designer</SubType>

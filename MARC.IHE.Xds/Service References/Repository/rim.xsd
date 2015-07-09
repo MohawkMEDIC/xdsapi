@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Sample license text.
+-->
+
 <schema xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" xmlns="http://www.w3.org/2001/XMLSchema">
   <import schemaLocation="http://www.w3.org/2001/xml.xsd" namespace="http://www.w3.org/XML/1998/namespace" />
   <annotation>
