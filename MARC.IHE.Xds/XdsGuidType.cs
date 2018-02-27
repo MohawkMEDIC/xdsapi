@@ -70,10 +70,15 @@ namespace MARC.IHE.Xds
 		/// </summary>
 		public static readonly XdsGuidType XDSDocumentEntry_FormatCode = new XdsGuidType("a09d5840-386c-46f2-b5ad-9c3699a4309d");
 
-		/// <summary>
-		/// XDS limited meta data classification.
-		/// </summary>
-		public static readonly XdsGuidType XDSDocumentEntry_LimitedMetaData = new XdsGuidType("ab9b591b-83ab-4d03-8f5d-f93b1fb92e85");
+        /// <summary>
+        /// The XDS document entry health care facility type code.
+        /// </summary>
+        public static readonly XdsGuidType XDSDocumentEntry_HealthCareFacilityTypeCode = new XdsGuidType("f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1");
+
+        /// <summary>
+        /// XDS limited meta data classification.
+        /// </summary>
+        public static readonly XdsGuidType XDSDocumentEntry_LimitedMetaData = new XdsGuidType("ab9b591b-83ab-4d03-8f5d-f93b1fb92e85");
 
 		/// <summary>
 		/// XDS document entry patient id.

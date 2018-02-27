@@ -54,7 +54,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Util.cs" />
+    <Compile Include="XdsUtil.cs" />
     <Compile Include="XdsConfidentialityCodeType.cs" />
     <Compile Include="XdsGuidType.cs" />
   </ItemGroup>
