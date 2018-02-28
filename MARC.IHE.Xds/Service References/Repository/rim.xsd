@@ -92,7 +92,7 @@ Sample license text.
   <complexType name="IdentifiableType">
     <annotation>
       <documentation xml:lang="en">
-        Common base type for all types that have unique identity.     
+        Common base type for all types that have unique identity.
         If id is provided and is not in proper URN syntax then it is used for
         linkage within document and is ignored by the registry. In this case the
         registry generates a UUID URN for id attribute.

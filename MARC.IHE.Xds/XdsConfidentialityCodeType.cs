@@ -20,61 +20,61 @@ using System;
 
 namespace MARC.IHE.Xds
 {
-	/// <summary>
-	/// XDS Confidentiality codes
-	/// </summary>
-	public class XdsConfidentialityCodeType
-	{
-		/// <summary>
-		/// Document entry that is deprecated
-		/// </summary>
-		public static readonly XdsConfidentialityCodeType EmergencyOnly = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.110", "Connect-a-thon confidentialityCodes");
+    /// <summary>
+    /// XDS Confidentiality codes
+    /// </summary>
+    public class XdsConfidentialityCodeType
+    {
+        /// <summary>
+        /// Document entry that is deprecated
+        /// </summary>
+        public static readonly XdsConfidentialityCodeType EmergencyOnly = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.110", "Connect-a-thon confidentialityCodes");
 
-		/// <summary>
-		/// Document is submitted
-		/// </summary>
-		public static readonly XdsConfidentialityCodeType Normal = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.107", "Connect-a-thon confidentialityCodes");
+        /// <summary>
+        /// Document is submitted
+        /// </summary>
+        public static readonly XdsConfidentialityCodeType Normal = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.107", "Connect-a-thon confidentialityCodes");
 
-		/// <summary>
-		/// Document has been approved for sharing
-		/// </summary>
-		public static readonly XdsConfidentialityCodeType Restricted = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.109", "Connect-a-thon confidentialityCodes");
+        /// <summary>
+        /// Document has been approved for sharing
+        /// </summary>
+        public static readonly XdsConfidentialityCodeType Restricted = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.109", "Connect-a-thon confidentialityCodes");
 
-		private readonly String m_code;
-		private readonly String m_scheme;
+        private readonly String m_code;
+        private readonly String m_scheme;
 
-		/// <summary>
-		/// Create a status type
-		/// @param code
-		/// </summary>
-		private XdsConfidentialityCodeType(String code, String scheme)
-		{
-			this.m_code = code;
-			this.m_scheme = scheme;
-		}
+        /// <summary>
+        /// Create a status type
+        /// @param code
+        /// </summary>
+        private XdsConfidentialityCodeType(String code, String scheme)
+        {
+            this.m_code = code;
+            this.m_scheme = scheme;
+        }
 
-		/// <summary>
-		/// Get the code for the XDS document entry
-		/// @return
-		/// </summary>
-		public String Code
-		{
-			get
-			{
-				return this.m_code;
-			}
-		}
+        /// <summary>
+        /// Get the code for the XDS document entry
+        /// @return
+        /// </summary>
+        public String Code
+        {
+            get
+            {
+                return this.m_code;
+            }
+        }
 
-		/// <summary>
-		/// Get the code for the XDS document entry
-		/// @return
-		/// </summary>
-		public String Scheme
-		{
-			get
-			{
-				return this.m_scheme;
-			}
-		}
-	}
+        /// <summary>
+        /// Get the code for the XDS document entry
+        /// @return
+        /// </summary>
+        public String Scheme
+        {
+            get
+            {
+                return this.m_scheme;
+            }
+        }
+    }
 }
