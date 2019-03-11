@@ -1,80 +1,67 @@
 ﻿/*
- * Copyright 2008-2015 Mohawk College of Applied Arts and Technology
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you
- * may not use this file except in compliance with the License. You may
- * obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * Copyright 2008-2019 Mohawk College of Applied Arts and Technology
+ * 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you 
+ * may not use this file except in compliance with the License. You may 
+ * obtain a copy of the License at 
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0 
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the 
+ * License for the specific language governing permissions and limitations under 
  * the License.
- *
- * User: fyfej
+ * 
+ * User: khannan
+ * Date: 2019-3-11
  */
-
 using System;
 
 namespace MARC.IHE.Xds
 {
     /// <summary>
-    /// XDS Confidentiality codes
+    /// Represents a collection of XDS Confidentiality codes.
     /// </summary>
     public class XdsConfidentialityCodeType
     {
         /// <summary>
-        /// Document entry that is deprecated
+        /// Represents a document entry that is deprecated.
         /// </summary>
         public static readonly XdsConfidentialityCodeType EmergencyOnly = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.110", "Connect-a-thon confidentialityCodes");
 
         /// <summary>
-        /// Document is submitted
+        /// Represents a document is submitted.
         /// </summary>
         public static readonly XdsConfidentialityCodeType Normal = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.107", "Connect-a-thon confidentialityCodes");
 
         /// <summary>
-        /// Document has been approved for sharing
+        /// Represents a document has been approved for sharing.
         /// </summary>
         public static readonly XdsConfidentialityCodeType Restricted = new XdsConfidentialityCodeType("1.3.6.1.4.1.21367.2006.7.109", "Connect-a-thon confidentialityCodes");
 
-        private readonly String m_code;
-        private readonly String m_scheme;
+		/// <summary>
+		/// Initializes a new instance of the <see cref="XdsConfidentialityCodeType"/> class.
+		/// </summary>
+		/// <param name="code">The code.</param>
+		/// <param name="scheme">The scheme.</param>
+		private XdsConfidentialityCodeType(string code, string scheme)
+		{
+			this.Code = code;
+			this.Scheme = scheme;
+		}
 
-        /// <summary>
-        /// Create a status type
-        /// @param code
-        /// </summary>
-        private XdsConfidentialityCodeType(String code, String scheme)
-        {
-            this.m_code = code;
-            this.m_scheme = scheme;
-        }
+		/// <summary>
+		/// Get the code for the XDS document entry.
+		/// </summary>
+		/// <value>The code.</value>
+		public string Code { get; }
 
-        /// <summary>
-        /// Get the code for the XDS document entry
-        /// @return
-        /// </summary>
-        public String Code
-        {
-            get
-            {
-                return this.m_code;
-            }
-        }
-
-        /// <summary>
-        /// Get the code for the XDS document entry
-        /// @return
-        /// </summary>
-        public String Scheme
-        {
-            get
-            {
-                return this.m_scheme;
-            }
-        }
-    }
+		/// <summary>
+		/// Get the scheme for the XDS document entry.
+		/// </summary>
+		/// <value>The scheme.</value>
+		public string Scheme { get; }
+	}
 }

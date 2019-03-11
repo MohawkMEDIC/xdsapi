@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="22ded54d-03d2-4975-afed-8ec895d4a423" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="file://c:\temp\wsdl\XDS.b_DocumentRegistry.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DocumentRegistry.wsdl" MetadataType="Wsdl" ID="0621e7c4-3197-46f4-bea5-b3e0ce060ecb" SourceId="1" SourceUrl="file:///c:/temp/wsdl/XDS.b_DocumentRegistry.wsdl" />
+    <MetadataFile FileName="rim.xsd" MetadataType="Schema" ID="2c3887da-19e9-4bbb-8af1-edf2347bd6d1" SourceId="1" SourceUrl="file:///c:/temp/schema/ebRS/rim.xsd" />
+    <MetadataFile FileName="rs.xsd" MetadataType="Schema" ID="8a9f0805-d3fd-4e77-b74f-0007f4826812" SourceId="1" SourceUrl="file:///c:/temp/schema/ebRS/rs.xsd" />
+    <MetadataFile FileName="query.xsd" MetadataType="Schema" ID="5fd64aac-2622-4ff2-94d3-5bc8ccc8209f" SourceId="1" SourceUrl="file:///c:/temp/schema/ebRS/query.xsd" />
+    <MetadataFile FileName="xml.xsd" MetadataType="Schema" ID="e9c0ffa1-5db8-45b4-8f9a-d8d2c5aa1ada" SourceId="1" SourceUrl="http://www.w3.org/2001/xml.xsd" />
+    <MetadataFile FileName="lcm.xsd" MetadataType="Schema" ID="94b73d20-f4de-430d-be27-1295141ea552" SourceId="1" SourceUrl="file:///c:/temp/schema/ebRS/lcm.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

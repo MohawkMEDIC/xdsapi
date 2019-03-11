@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MARC.IHE.Xds", "MARC.IHE.Xds\MARC.IHE.Xds.csproj", "{AC57BB64-287A-4999-810B-11A49D8C7FF5}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MARC.IHE.Xds", "MARC.IHE.Xds\MARC.IHE.Xds.csproj", "{66FDA4CA-F25C-41F1-9A95-27D9010564A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC57BB64-287A-4999-810B-11A49D8C7FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC57BB64-287A-4999-810B-11A49D8C7FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC57BB64-287A-4999-810B-11A49D8C7FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC57BB64-287A-4999-810B-11A49D8C7FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66FDA4CA-F25C-41F1-9A95-27D9010564A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66FDA4CA-F25C-41F1-9A95-27D9010564A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66FDA4CA-F25C-41F1-9A95-27D9010564A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66FDA4CA-F25C-41F1-9A95-27D9010564A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {47C16EDF-43BA-461D-A696-BFD0BE9AC2A5}
 	EndGlobalSection
 EndGlobal
