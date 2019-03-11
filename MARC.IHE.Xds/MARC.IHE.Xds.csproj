@@ -10,6 +10,8 @@
     <PackageProjectUrl>https://github.com/MohawkMEDIC/xdsapi</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MohawkMEDIC/xdsapi</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageIconUrl>https://avatars3.githubusercontent.com/u/26844884?s=400&amp;u=0d772db7422a9cca45b670d9aaad2c7b3b6d7f89&amp;v=4</PackageIconUrl>
+    <Version>1.0.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,10 +25,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.ServiceModel.Duplex" Version="4.4.*" />
-    <PackageReference Include="System.ServiceModel.Http" Version="4.4.*" />
-    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.4.*" />
-    <PackageReference Include="System.ServiceModel.Security" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.5.3" />
   </ItemGroup>
 
   <ItemGroup>
