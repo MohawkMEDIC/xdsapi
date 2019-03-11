@@ -4,5 +4,5 @@ The MEDIC XDS Client API is a simple wrapper which allows users to easily create
 
 # Installation
 ```cmd
-Install-Package MARC.IHE.Xds -Version 1.0.0	
+Install-Package MARC.IHE.Xds -Version 1.0.0.1
 ```
